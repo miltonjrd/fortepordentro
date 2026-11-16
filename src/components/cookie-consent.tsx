@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "@tanstack/react-router";
+import { isPixelAllowed } from "@/lib/meta-pixel";
 
 const KEY = "cookie-consent-marketing";
 const PIXEL_ID = "3715069618646523";
@@ -20,6 +21,9 @@ function startPixel() {
     n.loaded = true;
     n.version = "2.0";
     n.queue = [];
+    // Desliga o PageView automático do script em mudanças de URL; o PageView é
+    // enviado manualmente abaixo, só nas rotas permitidas.
+    n.disablePushState = true;
     const s = document.createElement("script");
     s.async = true;
     s.src = "https://connect.facebook.net/en_US/fbevents.js";
@@ -62,14 +66,15 @@ export function CookieConsent() {
       }
       return;
     }
-    startPixel();
+    if (isPixelAllowed(window.location.pathname)) startPixel();
     let last = window.location.pathname + window.location.search;
     return router.subscribe("onResolved", () => {
       const cur = window.location.pathname + window.location.search;
-      if (cur !== last) {
-        last = cur;
-        (window as any).fbq?.("track", "PageView");
-      }
+      if (cur === last) return;
+      last = cur;
+      if (!isPixelAllowed(window.location.pathname)) return;
+      if ((window as any).__metaPixelInit) (window as any).fbq?.("track", "PageView");
+      else startPixel();
     });
   }, [choice, router]);
 

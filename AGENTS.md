@@ -14,3 +14,4 @@
 - Keep the main sales page (`/`) in strength, autonomy and wellness language: no disease names, screening quizzes, diagnosis/treatment claims, surgery or patient testimonials, because the Meta Pixel was restricted under health categories. Keep the author CRM and RQE visible.
 - Keep the osteoporosis triage scoring in a browser-safe pure module (`src/lib/osteoporose-quiz.ts`) and its answers transient in the component; it must read as risk screening, never diagnosis, and the video slot stays a single component (`OsteoporoseVoice`) used by the route.
 - Use the shared `AnatomiaVideo` player for narrated anatomy clips with native controls and no autoplay so visitors choose when to hear the explanations.
+- Never load or fire the Meta Pixel on `/osteoporose`; the excluded routes live in `src/lib/meta-pixel.ts` and `CookieConsent` must check them on first load and on every client-side navigation.
