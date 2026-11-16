@@ -152,7 +152,7 @@ function Osteoporose() {
       ]}
       proof={{
         quote:
-          "fui muito bem acolhida pelo hospital, o médico que fez a cirurgia me acompanhou durante o todo o processo de recuperação, Dr. Mauro Pedrim, excelente profissional",
+          "fui muito bem acolhida pelo hospital, o médico que fez a cirurgia me acompanhou durante o todo o processo de recuperação, Dr. Mauro Pedrin, excelente profissional",
         author: "Amanda Aguiar",
         source: "avaliação pública de paciente no Google, 5 estrelas",
       }}

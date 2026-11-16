@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, ShieldCheck, BookOpen, Dumbbell, Apple, Footprints, Repeat, Gift, AlertTriangle, Star } from "lucide-react";
+import { Check, ShieldCheck, BookOpen, Dumbbell, Apple, Footprints, Repeat, Gift, AlertTriangle } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -12,30 +12,24 @@ import avosMercado from "@/assets/avos-mercado.jpg.asset.json";
 import ebook from "@/assets/capa-ebook.png.asset.json";
 import mauroFoto from "@/assets/mauro-foto.png.asset.json";
 import logo from "@/assets/emblema.png";
-import mauroCirurgia from "@/assets/mauro-cirurgia.png.asset.json";
-import depoimentoGoogle from "@/assets/depoimento-google.png.asset.json";
 import heroAutonomia from "@/assets/hero-autonomia.jpg";
-import { SarcFQuiz } from "@/components/sarc-f-quiz";
 import { InstagramFollow } from "@/components/instagram-follow";
 import { ebookOffer, formatBRL } from "@/lib/ebook-offer";
-import { AnatomiaVideo } from "@/components/anatomia-video";
-import anatomia from "@/assets/sarcopenia-anatomia.mp4.asset.json";
-import anatomiaCapa from "@/assets/sarcopenia-anatomia-capa.jpg.asset.json";
 
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FORTE POR DENTRO | EU AINDA FAÇO SOZINHO | Guia sobre sarcopenia e força muscular" },
+      { title: "FORTE POR DENTRO | EU AINDA FAÇO SOZINHO | Guia prático de força no dia a dia" },
       {
         name: "description",
         content:
-          "E-book educativo de um médico ortopedista sobre sarcopenia e os cuidados com a força e a saúde muscular no dia a dia.",
+          "Guia prático para manter a força no dia a dia: levantar da cadeira, subir escadas, carregar as compras e caminhar com confiança.",
       },
       { property: "og:title", content: "FORTE POR DENTRO | EU AINDA FAÇO SOZINHO" },
       {
         property: "og:description",
-        content: "Cuide da sua força e preserve sua autonomia. E-book + 3 bônus por R$ 67,00.",
+        content: "Continue fazendo as suas coisas sozinho, com força e confiança. E-book + 3 bônus por R$ 67,00.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -103,26 +97,26 @@ const pains = [
 ];
 
 const modules = [
-  { icon: BookOpen, t: "Entendendo a sarcopenia", d: "O que é a perda muscular, por que merece atenção e quais sinais justificam uma avaliação profissional.", b: "Entender melhor o problema e reconhecer a importância de cuidar da saúde muscular." },
-  { icon: Dumbbell, t: "Exercícios adaptados", d: "Movimentos seguros para cada fase, que estimulam o fortalecimento muscular respeitando seu condicionamento e suas limitações.", b: "Compreender como o exercício ajuda a cuidar dos músculos." },
-  { icon: Apple, t: "Nutrição na medida certa", d: "Como incluir a proteína de forma adequada para apoiar a manutenção do tecido muscular e a sua energia.", b: "Reconhecer os cuidados nutricionais importantes, sem dietas da moda." },
-  { icon: Footprints, t: "Equilíbrio e confiança", d: "Técnicas para melhorar a estabilidade e cuidados que ajudam a reduzir o medo e o risco de cair.", b: "Identificar cuidados que favorecem uma rotina mais segura." },
-  { icon: Repeat, t: "Hábitos simples", d: "Pequenas mudanças na rotina que favorecem a sua independência no dia a dia.", b: "Incorporar o cuidado muscular à rotina de forma progressiva e realista." },
+  { icon: BookOpen, t: "Entendendo a sua força", d: "O que muda com o tempo e por que vale a pena agir agora.", b: "Saber por onde começar e por que cada passo conta." },
+  { icon: Dumbbell, t: "Exercícios adaptados", d: "Passo a passo, do mais simples ao mais desafiador.", b: "Evoluir no seu ritmo, em casa ou na academia." },
+  { icon: Apple, t: "Proteína sem complicação", d: "Como montar refeições que ajudam a manter a força.", b: "Escolhas simples para o dia a dia, sem dieta da moda." },
+  { icon: Footprints, t: "Equilíbrio e confiança", d: "Movimentos para ter mais firmeza no dia a dia.", b: "Caminhar e se movimentar com mais segurança." },
+  { icon: Repeat, t: "Rotina que funciona", d: "Hábitos simples para manter tudo isso por anos.", b: "Transformar pequenas mudanças em rotina." },
 ];
 
 const bonuses = [
   { t: "Guia de Primeiros Passos", d: "Para você não travar e começar com segurança, respeitando o seu ritmo." },
-  { t: "Checklist de Segurança para o Idoso", d: "Para treinar com mais tranquilidade e ajudar a evitar lesões e quedas. Não substitui uma avaliação individual." },
+  { t: "Checklist de Segurança em Casa", d: "Para treinar com mais tranquilidade e deixar a casa mais prática e segura no dia a dia." },
   { t: "Manual de Proteínas Simples", d: "Combinações fáceis para o seu dia a dia, sem dietas complexas." },
 ];
 
 const faqs = [
-  ["Preciso ser atleta?", "Não! O e-book é para adultos e idosos que desejam cuidar da força muscular. Os exercícios são adaptados para iniciantes."],
-  ["O guia Eu Ainda Faço Sozinho é indicado apenas para pessoas idosas?", "Não. O guia aborda a saúde muscular e a sarcopenia, temas relevantes para o envelhecimento e para o cuidado com a musculatura ao longo da vida adulta. A adequação das orientações depende das necessidades e condições individuais."],
-  ["Preciso frequentar uma academia?", "Não necessariamente. O cuidado com a força pode envolver diferentes formas de exercício, desde que adequadas à sua capacidade e condições de saúde. Quem tem fraqueza importante, histórico de quedas, dor ou dificuldade de mobilidade deve buscar orientação profissional antes de iniciar exercícios."],
-  ["O e-book garante que vou recuperar minha massa muscular?", "Não. Os resultados variam conforme idade, estado de saúde, alimentação, nível de atividade física e causa da perda muscular. O material é educativo, não uma garantia de recuperação."],
-  ["O material substitui uma consulta médica?", "Não. O guia não realiza diagnósticos, não prescreve tratamento individual e não substitui consultas médicas ou acompanhamento de outros profissionais de saúde."],
-  ["Preciso mudar toda a minha alimentação?", "Não necessariamente. Quem tem doença renal ou outras condições que exigem cuidados nutricionais específicos deve consultar um profissional antes de aumentar o consumo de proteínas ou usar suplementos."],
+  ["Preciso ser atleta?", "Não! O e-book é para adultos e idosos que desejam cuidar da força. Os exercícios são adaptados para iniciantes."],
+  ["O guia Eu Ainda Faço Sozinho é indicado apenas para pessoas idosas?", "Não. O guia fala sobre força no dia a dia, um tema que vale para qualquer fase da vida adulta. Cada pessoa adapta as orientações ao próprio ritmo."],
+  ["Preciso frequentar uma academia?", "Não necessariamente. Os exercícios podem ser feitos em casa ou na academia, respeitando o seu ritmo e o seu condicionamento."],
+  ["Em quanto tempo vou sentir diferença?", "Cada pessoa tem o seu ritmo. Com constância, muita gente percebe mais disposição e firmeza nas primeiras semanas, mas os resultados variam."],
+  ["Isso substitui consulta médica?", "Não. É um material educativo. Se você tem alguma limitação, converse com o seu médico antes de começar."],
+  ["Preciso mudar toda a minha alimentação?", "Não necessariamente. O guia mostra como incluir proteína no dia a dia com escolhas simples. Se você segue alguma orientação alimentar específica, converse com o seu médico ou nutricionista antes de mudar."],
   ["Como receberei o produto?", "O acesso é disponibilizado digitalmente após a confirmação do pagamento. Confira seu e-mail e as instruções de acesso enviadas após a compra."],
   ["Posso ler no celular?", "Sim. O material pode ser consultado no celular, tablet ou computador."],
   ["E se eu perceber que o material não é adequado para mim?", "A oferta prevê garantia de 7 dias. Dentro do prazo, basta seguir as instruções da plataforma de pagamento para solicitar o reembolso."],
@@ -144,10 +138,10 @@ function Index() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-center md:gap-10">
             <div className="text-center">
               <h1 className="mx-auto max-w-4xl font-display text-xl font-bold leading-snug text-accent md:text-2xl">
-                Descubra como cuidar da sua força muscular e o que pode ajudar você a manter sua autonomia, segurança e confiança nos movimentos.
+                Continue fazendo as suas coisas sozinho, com força e confiança.
               </h1>
               <p className="mx-auto mt-6 max-w-3xl text-sm font-semibold leading-relaxed text-primary-foreground md:text-base">
-                Descubra hábitos, exercícios e estratégias de alimentação que podem ajudar a preservar a mobilidade e manter sua autonomia para as atividades diárias e os passeios.
+                Um guia prático para manter a força no dia a dia: levantar da cadeira, subir escadas, carregar as compras e caminhar com segurança. Sem academia obrigatória e sem virar atleta.
               </p>
               <img src={heroAutonomia} alt="Casal de idosos caminhando lado a lado em um parque ensolarado, a mulher carregando sacolas de compras com verduras e frutas" width={1536} height={768} className="mx-auto mt-6 block w-full max-w-3xl rounded-2xl object-cover shadow-xl" />
             </div>
@@ -161,23 +155,38 @@ function Index() {
                 Exercício de força: princípios para começar com segurança
               </p>
               <p className="mt-2 leading-relaxed text-foreground/85">
-                Fortalecimento muscular adaptado ao condicionamento, às limitações e às condições de saúde de cada pessoa.
+                Movimentos adaptados ao seu ritmo e à sua rotina, em casa ou na academia.
               </p>
             </div>
 
 
-            <p className="mb-2 font-semibold">Perda de massa muscular e sarcopenia: um desafio que atinge adultos jovens e idosos.</p>
             <p className="mb-8 leading-relaxed opacity-80">
               Por Dr. Mauro Augusto Artolphi Pedrin, médico ortopedista, CRM-DF 15789, RQE 11028.
             </p>
-            <CTA>QUERO CUIDAR DA MINHA FORÇA AGORA</CTA>
+            <CTA>QUERO CUIDAR DA MINHA FORÇA</CTA>
             <p className="mt-6 text-sm opacity-75">
               Para adultos que desejam cuidar da força muscular e pessoas idosas que buscam mais segurança e independência.
             </p>
               </div>
               <div>
-                <AnatomiaVideo src={anatomia.url} poster={anatomiaCapa.url} title="Anatomia e fisiopatologia da sarcopenia, com narração masculina" />
-                <SarcFQuiz />
+                <div className="mt-6 rounded-lg border bg-card p-5 text-left text-card-foreground sm:p-6">
+                  <h2 className="mb-2 text-xl font-bold leading-snug text-primary">Como está a sua força hoje?</h2>
+                  <p className="mb-4 text-base text-muted-foreground">Responda de cabeça, só pra você:</p>
+                  <ul className="grid gap-2.5">
+                    {[
+                      "Você levanta da cadeira sem apoiar as mãos?",
+                      "Sobe um lance de escada sem precisar parar?",
+                      "Carrega uma sacola de mercado com tranquilidade?",
+                      "Sente firmeza ao caminhar em calçada irregular?",
+                    ].map((q) => (
+                      <li key={q} className="flex gap-3 rounded-md border px-4 py-3 text-base leading-snug">
+                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                        {q}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 font-semibold text-primary">Se alguma resposta te fez pensar, este guia foi feito pra você.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -186,22 +195,20 @@ function Index() {
 
 
 
-      <Section eyebrow="Saúde muscular" title="A força muscular sustenta a autonomia no dia a dia">
+      <Section eyebrow="Por que a força importa" title="A força sustenta a sua autonomia no dia a dia">
         <ul className="grid gap-3 sm:grid-cols-2">
           {pains.map((p) => (
             <li key={p} className="rounded-xl border bg-card p-4 font-semibold">{p}</li>
           ))}
         </ul>
-        <p>Com o passar dos anos, é comum a força muscular diminuir.</p>
-        <p>A <strong>sarcopenia</strong> é a perda de massa muscular que afeta a força, o equilíbrio e a independência. Ela não é uma preocupação só de pessoas muito idosas e também pode atingir adultos jovens.</p>
-        <p>Informação de qualidade ajuda a conversar melhor com seu médico sobre esse tema.</p>
-        <p className="font-semibold text-primary">Cuidar dos músculos faz parte de um envelhecimento ativo.</p>
+        <p>A força é o que deixa você independente nas pequenas coisas: levantar, abaixar, pegar o neto no colo, ir ao mercado sozinho. Com o passar dos anos, ela diminui naturalmente quando não é estimulada. A boa notícia é que dá para trabalhar isso em qualquer idade, com movimentos simples e constância.</p>
+        <p className="font-semibold text-primary">Não é sobre virar atleta. É sobre continuar fazendo o que você gosta.</p>
       </Section>
 
 
       <Section alt eyebrow="No dia a dia" title="Movimento, alimentação e hábitos para o dia a dia">
         <p>Atividades como levantar da cama, caminhar e passear em família envolvem força e equilíbrio.</p>
-        <p>Não é sobre virar atleta. É sobre cuidar da sua autonomia e da sua confiança no dia a dia.</p>
+        <p>Força é o que deixa você aproveitar esses momentos com confiança.</p>
         <img src={alongamento.url} alt="Casal se alongando ao ar livre no parque" width={1536} height={1024} loading="lazy" className="rounded-3xl object-cover shadow-2xl" />
         <div className="grid gap-4 sm:grid-cols-2">
           <img
@@ -225,22 +232,14 @@ function Index() {
         <p className="text-base text-muted-foreground">Os resultados variam de pessoa para pessoa.</p>
       </Section>
 
-      <Section eyebrow="A oportunidade" title="Existem caminhos para cuidar da sua força">
-        <p>Treinamento de força adaptado, alimentação adequada, consumo suficiente de proteínas, atividade física regular e avaliação profissional quando necessária. O desafio é entender como esses cuidados se relacionam e por onde começar.</p>
-        <p>Você não precisa descobrir tudo sozinho, nem seguir orientações aleatórias da internet. Precisa de <strong>informação organizada, linguagem acessível</strong> e orientação sobre o que merece sua atenção.</p>
-        <p>Essa é a proposta do <strong>Eu Ainda Faço Sozinho</strong>: reunir o essencial sobre sarcopenia e saúde muscular para ajudar você a compreender o problema e conversar com profissionais de saúde sobre os próximos passos.</p>
-      </Section>
-
-      <Section alt eyebrow="A prova" title="A ciência por trás do cuidado com a sua força">
-        <p>A perda de massa magra pode começar por volta dos 30 anos, e estudos associam mais força muscular a mais saúde e longevidade. O guia não é achismo: reúne orientações baseadas em evidências médicas, unindo exercícios seguros e alimentação adequada, em casa ou na academia.</p>
-        <p>A sarcopenia é uma condição reconhecida pela medicina, e sua abordagem pode envolver avaliação clínica, exercícios de resistência, nutrição adequada e acompanhamento individualizado.</p>
-        <p>O que sustenta a proposta do guia?</p>
+      <Section eyebrow="O método" title="Existem caminhos para cuidar da sua força">
+        <p>Você não precisa descobrir tudo sozinho, nem seguir orientações aleatórias da internet. Precisa de <strong>informação organizada, linguagem acessível</strong> e um passo a passo que caiba na sua rotina.</p>
         <ul className="grid gap-3 sm:grid-cols-2">
           {[
-            ["Conhecimento médico", "O conteúdo é apresentado sob a perspectiva de um médico ortopedista."],
-            ["Foco na vida real", "A abordagem prioriza força, mobilidade, segurança e atividades cotidianas."],
-            ["Orientação prática", "O objetivo é facilitar a compreensão de medidas que podem ser discutidas e adaptadas à realidade de cada pessoa."],
-            ["Responsabilidade com a saúde", "O material educativo não substitui diagnóstico, prescrição individual ou acompanhamento profissional."],
+            ["Movimento adaptado", "Exercícios que cabem na sua rotina, em casa ou na academia."],
+            ["Alimentação que sustenta", "Como incluir proteína no dia a dia, sem dieta da moda."],
+            ["Equilíbrio e firmeza", "Treinos para caminhar e se movimentar com mais segurança."],
+            ["Hábitos que ficam", "Pequenas mudanças que viram rotina."],
           ].map(([t, d]) => (
             <li key={t} className="rounded-xl border bg-card p-4">
               <p className="font-bold text-primary">{t}</p>
@@ -248,18 +247,18 @@ function Index() {
             </li>
           ))}
         </ul>
-        <p>O guia não promete resultados iguais para todos, cura da sarcopenia ou recuperação muscular garantida. Seu propósito é ajudar você a entender melhor sua saúde muscular e a importância de agir de forma informada.</p>
+        <p>Essa é a proposta do <strong>Eu Ainda Faço Sozinho</strong>: reunir o essencial sobre força no dia a dia em um guia prático, escrito por um médico ortopedista em linguagem simples.</p>
       </Section>
 
       {/* PRODUTO */}
       <section className="py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
-          <img src={ebook.url} alt="Capa do e-book do Dr. Mauro Pedrin sobre sarcopenia e saúde muscular" width={1200} height={1800} loading="lazy" className="mx-auto w-full max-w-sm rounded-3xl shadow-2xl" />
+          <img src={ebook.url} alt="Capa do e-book Eu Ainda Faço Sozinho, do Dr. Mauro Pedrin" width={1200} height={1800} loading="lazy" className="mx-auto w-full max-w-sm rounded-3xl shadow-2xl" />
           <div className="space-y-5 text-lg leading-relaxed">
             <p className="text-sm font-bold uppercase tracking-widest text-accent">O produto</p>
-            <h2 className="text-3xl font-bold text-primary md:text-4xl">Um guia para entender seus músculos e cuidar melhor deles</h2>
-            <p>O <strong>Eu Ainda Faço Sozinho: Perda de Massa Muscular e Sarcopenia</strong> é um e-book educativo que aproxima o conhecimento sobre saúde muscular da sua realidade.</p>
-            <p>Consulte no seu ritmo, volte aos tópicos quando precisar e use as informações como apoio para conversar com seu médico. Formato digital para celular, tablet ou computador.</p>
+            <h2 className="text-3xl font-bold text-primary md:text-4xl">Um guia para continuar forte e independente</h2>
+            <p>O <strong>Eu Ainda Faço Sozinho</strong> é um e-book educativo que traz o cuidado com a força para a sua realidade, com exercícios, alimentação e hábitos simples.</p>
+            <p>Leia no seu ritmo e volte aos tópicos quando precisar. Formato digital para celular, tablet ou computador.</p>
             <CTA>QUERO CONHECER O GUIA</CTA>
           </div>
         </div>
@@ -283,7 +282,7 @@ function Index() {
       </section>
 
       <Section alt eyebrow="Sobre o autor" title="Baseado em conhecimento, experiência, confiança e cuidado">
-        <p className="font-semibold text-primary">Você não está diante de um influenciador fitness. Você está sendo orientado por um médico especialista.</p>
+        <p className="font-semibold text-primary">Você não está diante de um influenciador fitness. Este guia foi escrito por um médico ortopedista.</p>
         <div className="flex items-start gap-5 rounded-2xl border bg-card p-6">
           <img
             src={mauroFoto.url}
@@ -294,68 +293,22 @@ function Index() {
             className="h-32 w-24 shrink-0 rounded-2xl object-cover object-top"
           />
           <div className="text-base">
-            <p className="font-bold">Médico ortopedista e traumatologista</p>
-            <p>CRM-DF 15789, RQE 11028, Ortopedia e Traumatologia</p>
-            <p>Pós-graduação em Medicina Pública e da Família</p>
+            <p className="font-bold">Dr. Mauro Augusto Artolphi Pedrin</p>
+            <p>Médico ortopedista | CRM-DF 15789 | RQE 11028</p>
           </div>
         </div>
-        <p>Com décadas de experiência na linha de frente da saúde pública em Brasília/DF, o Dr. Mauro atua no trauma do idoso e conhece de perto as necessidades do corpo que envelhece. Essa experiência garante que cada orientação do guia seja apresentada com segurança, ética e responsabilidade.</p>
+        <p>Ao longo da carreira, o Dr. Mauro viu de perto como a força faz falta nas tarefas mais simples. Ele escreveu este guia para levar esse conhecimento de forma prática e acessível, para que mais pessoas mantenham a autonomia por mais tempo.</p>
         <p className="font-display text-2xl text-primary">Porque cuidar da força também é cuidar da sua autonomia.</p>
-        <div className="grid gap-6 md:grid-cols-2">
-
-          <div className="rounded-2xl border bg-card p-5">
-            <img
-              src={mauroCirurgia.url}
-              alt="Dr. Mauro Augusto Artolphi Pedrin vestindo roupa de cirurgia em ambiente hospitalar"
-              width={824}
-              height={850}
-              loading="lazy"
-              className="w-full rounded-xl object-cover"
-            />
-            <p className="mt-4 font-bold text-primary">Dr. Mauro Augusto Artolphi Pedrin</p>
-            <p className="text-base text-muted-foreground">CRM-DF 15789, RQE 11028, Ortopedia e Traumatologia, Pós-graduação em Medicina Pública e da Família</p>
-          </div>
-          <blockquote className="rounded-2xl border bg-card p-6 text-lg leading-relaxed">
-            <p>“Como médico ortopedista, atendo diariamente no consultório pacientes que começam a falhar em tarefas simples, como levantar da cadeira ou subir escadas. Eu vejo a sarcopenia acontecer na prática. Este e-book não é um compilado de dicas da internet; é um material estruturado com base na minha experiência clínica e científica para ajudar você a cuidar da sua autonomia física.”</p>
-            <footer className="mt-4 font-semibold text-primary">Dr. Mauro Augusto Artolphi Pedrin, médico ortopedista</footer>
-          </blockquote>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          <blockquote className="rounded-2xl border bg-card p-6 text-lg leading-relaxed">
-            <div className="mb-3 flex gap-1 text-accent" aria-label="Avaliação de 5 estrelas">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-current" />
-              ))}
-            </div>
-            <p>“Esse hospital é muito bom, pelo menos na ortopedia, eu sofri um acidente em Julho de 2017, precisei fazer cirurgia, e fui muito bem acolhida pelo hospital, o médico que fez a cirurgia me acompanhou durante o todo o processo de recuperação, Dr. Mauro Pedrim, excelente profissional, a equipe do hospital também muito boa... Não tenho o que reclamar.”</p>
-            <footer className="mt-4 text-base"><strong>Amanda Aguiar</strong><span className="text-muted-foreground">, avaliação pública no Google</span></footer>
-          </blockquote>
-          <img
-            src={depoimentoGoogle.url}
-            alt="Avaliação pública de paciente no Google sobre o Dr. Mauro Pedrin"
-            width={758}
-            height={986}
-            loading="lazy"
-            className="mx-auto w-full max-w-sm self-center rounded-2xl border bg-card p-2 shadow-lg"
-          />
-        </div>
-        <p>O guia não promete resultados iguais para todos, cura da sarcopenia ou recuperação garantida. Seu propósito é ajudar você a agir de forma informada.</p>
       </Section>
 
       <InstagramFollow
-        intro="O cuidado não termina na última página. No Instagram, o Dr. Mauro publica conteúdo educativo sobre força muscular, sarcopenia, alimentação e autonomia. É o mesmo cuidado deste e-book, em mensagens curtas para o seu dia."
+        intro="O conteúdo não termina na última página. No Instagram, o Dr. Mauro publica dicas sobre força, alimentação e autonomia no dia a dia, em mensagens curtas e práticas."
         themes={[
-          "Exercícios explicados com segurança",
+          "Exercícios explicados passo a passo",
           "Alimentação e proteínas no dia a dia",
-          "Cuidados que ajudam a prevenir quedas",
-          "Dúvidas respondidas com responsabilidade médica",
+          "Dicas para se movimentar com mais firmeza",
+          "Dúvidas respondidas de forma simples",
         ]}
-        proof={{
-          quote:
-            "fui muito bem acolhida pelo hospital, o médico que fez a cirurgia me acompanhou durante o todo o processo de recuperação, Dr. Mauro Pedrim, excelente profissional",
-          author: "Amanda Aguiar",
-          source: "avaliação pública de paciente no Google, 5 estrelas",
-        }}
       />
 
       <section className="bg-primary py-20 text-primary-foreground">
@@ -380,9 +333,9 @@ function Index() {
       <section id="oferta" className="py-20">
         <div className="mx-auto max-w-2xl px-6">
           <div className="rounded-3xl border-2 border-accent bg-card p-8 text-center shadow-xl md:p-12">
-            <h2 className="mb-6 text-3xl font-bold text-primary">Comece a cuidar melhor da sua saúde muscular</h2>
+            <h2 className="mb-6 text-3xl font-bold text-primary">Comece hoje a cuidar da sua força</h2>
             <ul className="mx-auto mb-8 max-w-md space-y-3 text-left text-lg">
-              {["E-book educativo sobre sarcopenia e saúde muscular", "Bônus 1: Guia de Primeiros Passos", "Bônus 2: Checklist de Segurança para o Idoso", "Bônus 3: Manual de Proteínas Simples"].map((x) => (
+              {["E-book Eu Ainda Faço Sozinho: guia prático de força no dia a dia", "Bônus 1: Guia de Primeiros Passos", "Bônus 2: Checklist de Segurança em Casa", "Bônus 3: Manual de Proteínas Simples"].map((x) => (
                 <li key={x} className="flex gap-3"><Check className="mt-1 h-5 w-5 shrink-0 text-accent" />{x}</li>
               ))}
             </ul>
@@ -416,7 +369,7 @@ function Index() {
       <section className="bg-primary py-20 text-center text-primary-foreground">
         <div className="mx-auto max-w-3xl space-y-5 px-6 text-lg leading-relaxed">
           <h2 className="text-3xl font-bold md:text-4xl">Dê o próximo passo para uma vida mais forte</h2>
-          <p className="opacity-90">Informação educativa para cuidar da força muscular com orientação e respeito aos limites de cada pessoa.</p>
+          <p className="opacity-90">Informação prática para cuidar da sua força, no seu ritmo.</p>
           <p className="font-display text-2xl">Cuide da sua força. Valorize sua autonomia. Invista em conhecimento.</p>
           <div className="pt-4"><CTA href={ebookOffer.checkoutUrl ?? "#oferta"}>QUERO MEU E-BOOK FORTE POR DENTRO AGORA</CTA></div>
           <p className="text-sm opacity-75">Pagamento único de R$ 67,00. Garantia de 7 dias.</p>
@@ -431,7 +384,7 @@ function Index() {
         </div>
         <div className="mx-auto flex max-w-3xl gap-3 px-6 text-sm text-muted-foreground">
           <AlertTriangle className="h-5 w-5 shrink-0 text-accent" />
-          <p><strong>Aviso importante:</strong> este e-book é um material educativo. Não substitui consulta médica, diagnóstico, tratamento, prescrição de exercícios ou orientação nutricional individualizada. Se você apresenta fraqueza muscular, perda de mobilidade ou quedas recorrentes, procure avaliação profissional. Em caso de fraqueza súbita, especialmente com alterações na fala, no rosto ou na sensibilidade, procure atendimento de emergência.</p>
+          <p>Material educativo, sem caráter de diagnóstico ou tratamento. Os resultados variam de pessoa para pessoa. Em caso de dúvida, procure orientação profissional.</p>
         </div>
       </footer>
     </main>

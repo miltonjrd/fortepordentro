@@ -8,7 +8,7 @@ export const INSTAGRAM_HANDLE = "@drmauroaugustoopedrin";
 type InstagramFollowProps = {
   intro: string;
   themes: string[];
-  proof: { quote: string; author: string; source: string };
+  proof?: { quote: string; author: string; source: string };
 };
 
 export function InstagramFollow({ intro, themes, proof }: InstagramFollowProps) {
@@ -33,8 +33,8 @@ export function InstagramFollow({ intro, themes, proof }: InstagramFollowProps) 
                 {INSTAGRAM_HANDLE}
               </p>
               <p className="text-base text-muted-foreground">
-                Dr. Mauro Augusto Artolphi Pedrin, CRM-DF 15789, RQE 11028, Ortopedia e
-                Traumatologia
+                Dr. Mauro Augusto Artolphi Pedrin, médico ortopedista, CRM-DF 15789, RQE
+                11028
               </p>
             </div>
           </div>
@@ -58,19 +58,23 @@ export function InstagramFollow({ intro, themes, proof }: InstagramFollowProps) 
               <p>
                 <strong>24</strong> publicações
               </p>
+              {proof && (
               <p className="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current text-accent" />
                 ))}
                 <span className="ml-1 font-semibold">avaliação no Google</span>
               </p>
+              )}
             </div>
+            {proof && (
             <blockquote className="mt-3 pt-3 text-base leading-relaxed">
               <p>“{proof.quote}”</p>
               <footer className="mt-2 text-sm text-muted-foreground">
                 <strong className="text-foreground">{proof.author}</strong>, {proof.source}
               </footer>
             </blockquote>
+            )}
           </div>
 
           <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
