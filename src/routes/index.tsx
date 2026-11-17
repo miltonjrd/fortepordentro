@@ -87,21 +87,25 @@ function Section({
   );
 }
 
-const pains = [
+const imagine = [
   "Subir escadas com segurança",
   "Levantar da cadeira com firmeza",
-  "Caminhar por mais tempo com disposição",
-  "Manter a força nas pernas e nos braços",
-  "Cuidar do equilíbrio no dia a dia",
-  "Realizar as tarefas do dia a dia com independência",
+  "Carregar as compras do mercado sem pedir ajuda",
+  "Caminhar com equilíbrio e confiança",
+];
+
+const credibility = [
+  "Escrito por médico ortopedista, com CRM-DF 15789 e RQE 11028 à vista",
+  "Linguagem simples, sem termos difíceis e sem promessas milagrosas",
+  "Orientações pensadas para quem está começando, em casa ou na academia",
+  "Conteúdo contínuo no Instagram, com exercícios explicados passo a passo e dicas de alimentação",
 ];
 
 const modules = [
-  { icon: BookOpen, t: "Entendendo a sua força", d: "O que muda com o tempo e por que vale a pena agir agora.", b: "Saber por onde começar e por que cada passo conta." },
-  { icon: Dumbbell, t: "Exercícios adaptados", d: "Passo a passo, do mais simples ao mais desafiador.", b: "Evoluir no seu ritmo, em casa ou na academia." },
-  { icon: Apple, t: "Proteína sem complicação", d: "Como montar refeições que ajudam a manter a força.", b: "Escolhas simples para o dia a dia, sem dieta da moda." },
-  { icon: Footprints, t: "Equilíbrio e confiança", d: "Movimentos para ter mais firmeza no dia a dia.", b: "Caminhar e se movimentar com mais segurança." },
-  { icon: Repeat, t: "Rotina que funciona", d: "Hábitos simples para manter tudo isso por anos.", b: "Transformar pequenas mudanças em rotina." },
+  { icon: Dumbbell, t: "Exercícios para fazer em casa", d: "Dicas de movimentos para manter o corpo sempre em atividade, do mais simples ao mais desafiador.", b: "Evoluir no seu ritmo, sem precisar de academia." },
+  { icon: Apple, t: "Alimentação e proteínas", d: "Instruções sobre alimentação e consumo de proteínas essenciais para o dia a dia.", b: "Escolhas simples, sem dieta da moda." },
+  { icon: Repeat, t: "Rotinas para manter a força", d: "Sugestões de rotinas para manter a força por mais tempo.", b: "Transformar pequenas mudanças em hábito." },
+  { icon: Footprints, t: "Para começar no seu ritmo", d: "Recomendações gerais para começar em casa, no seu ritmo, sem precisar de academia.", b: "Saber por onde começar e por que cada passo conta." },
 ];
 
 const bonuses = [
@@ -111,16 +115,16 @@ const bonuses = [
 ];
 
 const faqs = [
-  ["Preciso ser atleta?", "Não! O e-book é para adultos e idosos que desejam cuidar da força. Os exercícios são adaptados para iniciantes."],
-  ["O guia Eu Ainda Faço Sozinho é indicado apenas para pessoas idosas?", "Não. O guia fala sobre força no dia a dia, um tema que vale para qualquer fase da vida adulta. Cada pessoa adapta as orientações ao próprio ritmo."],
-  ["Preciso frequentar uma academia?", "Não necessariamente. Os exercícios podem ser feitos em casa ou na academia, respeitando o seu ritmo e o seu condicionamento."],
-  ["Em quanto tempo vou sentir diferença?", "Cada pessoa tem o seu ritmo. Com constância, muita gente percebe mais disposição e firmeza nas primeiras semanas, mas os resultados variam."],
-  ["Isso substitui consulta médica?", "Não. É um material educativo. Se você tem alguma limitação, converse com o seu médico antes de começar."],
+  ["Preciso ser atleta?", "Não. O e-book é para quem quer cuidar da força, e os exercícios são adaptados para iniciantes."],
+  ["O guia é só para quem tem mais idade?", "Não. O guia fala sobre força no dia a dia, um tema que vale para qualquer fase da vida adulta. Cada pessoa adapta as orientações ao próprio ritmo."],
+  ["Preciso frequentar academia?", "Não necessariamente. Os exercícios podem ser feitos em casa ou na academia, respeitando o seu ritmo."],
+  ["Em quanto tempo vou perceber diferença?", "Cada pessoa tem o seu ritmo e os resultados variam. A constância é o que mais conta."],
+  ["Isso substitui a orientação de um profissional de saúde?", "Não. É um material educativo. Se você tem alguma limitação, converse com o seu médico antes de começar."],
   ["Preciso mudar toda a minha alimentação?", "Não necessariamente. O guia mostra como incluir proteína no dia a dia com escolhas simples. Se você segue alguma orientação alimentar específica, converse com o seu médico ou nutricionista antes de mudar."],
-  ["Como receberei o produto?", "O acesso é disponibilizado digitalmente após a confirmação do pagamento. Confira seu e-mail e as instruções de acesso enviadas após a compra."],
-  ["Posso ler no celular?", "Sim. O material pode ser consultado no celular, tablet ou computador."],
-  ["E se eu perceber que o material não é adequado para mim?", "A oferta prevê garantia de 7 dias. Dentro do prazo, basta seguir as instruções da plataforma de pagamento para solicitar o reembolso."],
-  ["Os bônus estão incluídos no preço?", "Sim: e-book principal e três materiais complementares, sem cobrança adicional além dos R$ 67,00."],
+  ["Como recebo o material?", "O acesso é digital, liberado após a confirmação do pagamento. Confira seu e-mail para ver as instruções."],
+  ["Posso ler no celular?", "Sim. O material pode ser lido no celular, no tablet ou no computador."],
+  ["E se eu achar que não é para mim?", "A oferta prevê garantia de 7 dias. Dentro do prazo, basta seguir as instruções da plataforma de pagamento para pedir o reembolso."],
+  ["Os bônus estão incluídos no preço?", "Sim: o e-book e os três materiais complementares custam R$ 67,00, sem cobrança adicional."],
 ];
 
 function Index() {
@@ -141,9 +145,9 @@ function Index() {
                 Continue fazendo as suas coisas sozinho, com força e confiança.
               </h1>
               <p className="mx-auto mt-6 max-w-3xl text-sm font-semibold leading-relaxed text-primary-foreground md:text-base">
-                Um guia prático para manter a força no dia a dia: levantar da cadeira, subir escadas, carregar as compras e caminhar com segurança. Sem academia obrigatória e sem virar atleta.
+                Conheça um guia prático para manter a sua força nas atividades do dia a dia: levantar da cadeira, caminhar, subir escadas ou carregar compras. Sem academia obrigatória e sem virar atleta.
               </p>
-              <img src={heroAutonomia} alt="Casal de idosos caminhando lado a lado em um parque ensolarado, a mulher carregando sacolas de compras com verduras e frutas" width={1536} height={768} className="mx-auto mt-6 block w-full max-w-3xl rounded-2xl object-cover shadow-xl" />
+              <img src={heroAutonomia} alt="Casal caminhando lado a lado em um parque ensolarado, a mulher carregando sacolas de compras com verduras e frutas" width={1536} height={768} className="mx-auto mt-6 block w-full max-w-3xl rounded-2xl object-cover shadow-xl" />
             </div>
 
 
@@ -163,30 +167,10 @@ function Index() {
             <p className="mb-8 leading-relaxed opacity-80">
               Por Dr. Mauro Augusto Artolphi Pedrin, médico ortopedista, CRM-DF 15789, RQE 11028.
             </p>
-            <CTA>QUERO CUIDAR DA MINHA FORÇA</CTA>
+            <CTA>QUERO CUIDAR DA MINHA FORÇA AGORA</CTA>
             <p className="mt-6 text-sm opacity-75">
-              Para adultos que desejam cuidar da força muscular e pessoas idosas que buscam mais segurança e independência.
+              Para quem quer cuidar da força e continuar fazendo o que gosta, com firmeza e independência.
             </p>
-              </div>
-              <div>
-                <div className="mt-6 rounded-lg border bg-card p-5 text-left text-card-foreground sm:p-6">
-                  <h2 className="mb-2 text-xl font-bold leading-snug text-primary">Como está a sua força hoje?</h2>
-                  <p className="mb-4 text-base text-muted-foreground">Responda de cabeça, só pra você:</p>
-                  <ul className="grid gap-2.5">
-                    {[
-                      "Você levanta da cadeira sem apoiar as mãos?",
-                      "Sobe um lance de escada sem precisar parar?",
-                      "Carrega uma sacola de mercado com tranquilidade?",
-                      "Sente firmeza ao caminhar em calçada irregular?",
-                    ].map((q) => (
-                      <li key={q} className="flex gap-3 rounded-md border px-4 py-3 text-base leading-snug">
-                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                        {q}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-5 font-semibold text-primary">Se alguma resposta te fez pensar, este guia foi feito pra você.</p>
-                </div>
               </div>
             </div>
           </div>
@@ -195,14 +179,17 @@ function Index() {
 
 
 
-      <Section eyebrow="Por que a força importa" title="A força sustenta a sua autonomia no dia a dia">
+      <Section eyebrow="Para quem é o guia" title="Imagine fazer tudo isso com firmeza e tranquilidade:">
         <ul className="grid gap-3 sm:grid-cols-2">
-          {pains.map((p) => (
-            <li key={p} className="rounded-xl border bg-card p-4 font-semibold">{p}</li>
+          {imagine.map((p) => (
+            <li key={p} className="flex gap-3 rounded-xl border bg-card p-4 font-semibold">
+              <Check className="mt-1 h-5 w-5 shrink-0 text-accent" />
+              {p}
+            </li>
           ))}
         </ul>
-        <p>A força é o que deixa você independente nas pequenas coisas: levantar, abaixar, pegar o neto no colo, ir ao mercado sozinho. Com o passar dos anos, ela diminui naturalmente quando não é estimulada. A boa notícia é que dá para trabalhar isso em qualquer idade, com movimentos simples e constância.</p>
-        <p className="font-semibold text-primary">Não é sobre virar atleta. É sobre continuar fazendo o que você gosta.</p>
+        <p className="font-semibold text-primary">Se essas situações fazem parte dos seus planos, este material foi feito para você.</p>
+        <p>Não é sobre virar atleta. É sobre continuar fazendo o que você gosta, com a força que sustenta a sua autonomia no dia a dia.</p>
       </Section>
 
 
@@ -232,31 +219,13 @@ function Index() {
         <p className="text-base text-muted-foreground">Os resultados variam de pessoa para pessoa.</p>
       </Section>
 
-      <Section eyebrow="O método" title="Existem caminhos para cuidar da sua força">
-        <p>Você não precisa descobrir tudo sozinho, nem seguir orientações aleatórias da internet. Precisa de <strong>informação organizada, linguagem acessível</strong> e um passo a passo que caiba na sua rotina.</p>
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {[
-            ["Movimento adaptado", "Exercícios que cabem na sua rotina, em casa ou na academia."],
-            ["Alimentação que sustenta", "Como incluir proteína no dia a dia, sem dieta da moda."],
-            ["Equilíbrio e firmeza", "Treinos para caminhar e se movimentar com mais segurança."],
-            ["Hábitos que ficam", "Pequenas mudanças que viram rotina."],
-          ].map(([t, d]) => (
-            <li key={t} className="rounded-xl border bg-card p-4">
-              <p className="font-bold text-primary">{t}</p>
-              <p className="mt-1 text-base text-muted-foreground">{d}</p>
-            </li>
-          ))}
-        </ul>
-        <p>Essa é a proposta do <strong>Eu Ainda Faço Sozinho</strong>: reunir o essencial sobre força no dia a dia em um guia prático, escrito por um médico ortopedista em linguagem simples.</p>
-      </Section>
-
       {/* PRODUTO */}
       <section className="py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
           <img src={ebook} alt="Capa do e-book Eu Ainda Faço Sozinho, do Dr. Mauro Pedrin" width={1200} height={1800} loading="lazy" className="mx-auto w-full max-w-sm rounded-3xl shadow-2xl" />
           <div className="space-y-5 text-lg leading-relaxed">
             <p className="text-sm font-bold uppercase tracking-widest text-accent">O produto</p>
-            <h2 className="text-3xl font-bold text-primary md:text-4xl">Um guia para continuar forte e independente</h2>
+            <h2 className="text-3xl font-bold text-primary md:text-4xl">Um guia prático para manter a sua força</h2>
             <p>O <strong>Eu Ainda Faço Sozinho</strong> é um e-book educativo que traz o cuidado com a força para a sua realidade, com exercícios, alimentação e hábitos simples.</p>
             <p>Leia no seu ritmo e volte aos tópicos quando precisar. Formato digital para celular, tablet ou computador.</p>
             <CTA>QUERO CONHECER O GUIA</CTA>
@@ -266,8 +235,8 @@ function Index() {
 
       <section className="bg-secondary py-20">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-accent">O que você recebe</p>
-          <h2 className="mb-10 text-3xl font-bold text-primary md:text-4xl">Conhecimento que pode fazer diferença na rotina</h2>
+          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-accent">Benefícios do guia</p>
+          <h2 className="mb-10 text-3xl font-bold text-primary md:text-4xl">O que você ganha com este guia</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {modules.map(({ icon: I, t, d, b }) => (
               <div key={t} className="rounded-2xl bg-card p-6">
@@ -281,8 +250,8 @@ function Index() {
         </div>
       </section>
 
-      <Section alt eyebrow="Sobre o autor" title="Baseado em conhecimento, experiência, confiança e cuidado">
-        <p className="font-semibold text-primary">Você não está diante de um influenciador fitness. Este guia foi escrito por um médico ortopedista.</p>
+      <Section alt eyebrow="Sobre o autor" title="Quem escreveu este material?">
+        <p className="font-display text-2xl text-primary">Eu sou o Dr. Mauro Augusto Artolphi Pedrin.</p>
         <div className="flex items-start gap-5 rounded-2xl border bg-card p-6">
           <img
             src={mauroFoto}
@@ -297,8 +266,20 @@ function Index() {
             <p>Médico ortopedista | CRM-DF 15789 | RQE 11028</p>
           </div>
         </div>
-        <p>Ao longo da carreira, o Dr. Mauro viu de perto como a força faz falta nas tarefas mais simples. Ele escreveu este guia para levar esse conhecimento de forma prática e acessível, para que mais pessoas mantenham a autonomia por mais tempo.</p>
+        <p>Médico ortopedista, vi de perto como a força faz falta até mesmo nas tarefas mais simples do cotidiano. Escrevi este guia após anos de observação, estudo e trabalho constante com os meus pacientes.</p>
+        <p>Meu objetivo com este guia é levar esse conhecimento em linguagem simples, para que mais pessoas mantenham a autonomia por mais tempo.</p>
         <p className="font-display text-2xl text-primary">Porque cuidar da força também é cuidar da sua autonomia.</p>
+      </Section>
+
+      <Section eyebrow="Credibilidade" title="Conteúdo feito por um médico, não por um influenciador">
+        <ul className="grid gap-3">
+          {credibility.map((c) => (
+            <li key={c} className="flex gap-3 rounded-xl border bg-card p-4">
+              <Check className="mt-1 h-5 w-5 shrink-0 text-accent" />
+              {c}
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <InstagramFollow
@@ -341,17 +322,16 @@ function Index() {
             </ul>
             <p className="mb-2 font-display text-6xl font-bold text-primary">{formatBRL(ebookOffer.price)}</p>
             <p className="mb-8 text-base text-muted-foreground">Pagamento único.</p>
-            <p className="mb-4 font-semibold text-primary">Toque agora no botão abaixo e garanta seu acesso:</p>
-            <BuyButton className="btn-cta w-full text-lg">QUERO GARANTIR MEU ACESSO POR R$ 67,00</BuyButton>
-            <p className="mt-3 text-sm text-muted-foreground">Pagamento processado em ambiente seguro pela Hotmart. Garantia de 7 dias.</p>
+                        <BuyButton className="btn-cta w-full text-lg">QUERO GARANTIR MEU ACESSO POR R$ 67,00</BuyButton>
+            <p className="mt-3 text-sm text-muted-foreground">Pagamento processado em ambiente seguro pela Hotmart.</p>
           </div>
         </div>
       </section>
 
-      <Section alt title="Garantia incondicional de 7 dias">
+      <Section alt title="Garantia de 7 dias">
         <div className="flex gap-4">
           <ShieldCheck className="h-14 w-14 shrink-0 text-accent" />
-          <p>Você tem 7 dias para ler e aplicar. Se achar que não é para você, devolvemos 100% do seu dinheiro, sem burocracia e sem perguntas, pelo procedimento da plataforma de pagamento.</p>
+          <p>Você tem 7 dias para ler e colocar em prática. Se achar que o material não é para você, basta pedir o reembolso pelo procedimento da plataforma de pagamento.</p>
         </div>
       </Section>
 
@@ -384,7 +364,7 @@ function Index() {
         </div>
         <div className="mx-auto flex max-w-3xl gap-3 px-6 text-sm text-muted-foreground">
           <AlertTriangle className="h-5 w-5 shrink-0 text-accent" />
-          <p>Material educativo, sem caráter de diagnóstico ou tratamento. Os resultados variam de pessoa para pessoa. Em caso de dúvida, procure orientação profissional.</p>
+          <p>Material educativo e informativo. Não substitui a orientação de um profissional de saúde. Os resultados variam de pessoa para pessoa.</p>
         </div>
       </footer>
     </main>
