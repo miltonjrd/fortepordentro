@@ -142,7 +142,7 @@ function Index() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-center md:gap-10">
             <div className="text-center">
               <h1 className="mx-auto max-w-4xl font-display text-xl font-bold leading-snug text-accent md:text-2xl">
-                Continue fazendo as suas coisas sozinho, com força e confiança.
+                Aprenda a recuperar sua força e autonomia, sem ter medo de envelhecer
               </h1>
               <p className="mx-auto mt-6 max-w-3xl text-sm font-semibold leading-relaxed text-primary-foreground md:text-base">
                 Conheça um guia prático para manter a sua força nas atividades do dia a dia: levantar da cadeira, caminhar, subir escadas ou carregar compras. Sem academia obrigatória e sem virar atleta.
