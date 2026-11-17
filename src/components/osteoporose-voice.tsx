@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import clip from "@/assets/osteoporose-ossos-voz.mp4.asset.json";
-import poster from "@/assets/avos-shopping.jpg.asset.json";
+import clip from "@/assets/osteoporose-ossos-voz.mp4";
+import poster from "@/assets/avos-shopping.jpg";
 
 const FALA = "Você sabe o que pode fazer hoje para cuidar melhor dos seus ossos?";
 
@@ -40,8 +40,8 @@ export function OsteoporoseVoice() {
     <figure className="mx-auto mt-10 w-full max-w-3xl overflow-hidden rounded-xl border bg-card shadow-sm">
       <video
         ref={videoRef}
-        src={clip.url}
-        poster={poster.url}
+        src={clip}
+        poster={poster}
         autoPlay
         muted
         playsInline

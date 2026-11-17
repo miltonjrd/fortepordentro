@@ -7,13 +7,13 @@ import { OsteoporoseQuiz } from '@/components/osteoporose-quiz';
 import { OsteoporoseVoice } from '@/components/osteoporose-voice';
 import { InstagramFollow } from '@/components/instagram-follow';
 import { AnatomiaVideo } from '@/components/anatomia-video';
-import anatomia from '@/assets/osteoporose-anatomia.mp4.asset.json';
-import vsl from '@/assets/vsl-osteoporose.mp4.asset.json';
-import vslCapa from '@/assets/vsl-osteoporose-capa.jpg.asset.json';
-import anatomiaCapa from '@/assets/osteoporose-anatomia-capa.jpg.asset.json';
+import anatomia from '@/assets/osteoporose-anatomia.mp4';
+import vsl from '@/assets/vsl-osteoporose.mp4';
+import vslCapa from '@/assets/vsl-osteoporose-capa.jpg';
+import anatomiaCapa from '@/assets/osteoporose-anatomia-capa.jpg';
 
-import family from '@/assets/avos-shopping.jpg.asset.json';
-import author from '@/assets/mauro-cirurgia.png.asset.json';
+import family from '@/assets/avos-shopping.jpg';
+import author from '@/assets/mauro-cirurgia.png';
 import logo from '@/assets/emblema.png';
 import exercisePhoto from '@/assets/osteoporose-exercicios.jpg';
 import dairyPhoto from '@/assets/osteoporose-lacteos.jpg';
@@ -63,7 +63,7 @@ function Osteoporose() {
     </header>
 
     <section className="relative isolate overflow-hidden">
-      <img src={family.url} alt="Avós passeando com os netos em um shopping" className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
+      <img src={family} alt="Avós passeando com os netos em um shopping" className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
       <div className="absolute inset-0 -z-10 bg-background/90" />
       <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
         <div className="max-w-3xl">
@@ -78,7 +78,7 @@ function Osteoporose() {
             <p className="mt-6 max-w-2xl rounded-xl bg-card/80 px-5 py-4 text-base font-bold leading-snug text-primary md:text-lg">
               “Ela não dói. Não avisa. E quando os primeiros sinais aparecem, os ossos já podem estar fragilizados.”
             </p>
-            <AnatomiaVideo src={vsl.url} poster={vslCapa.url} title="Dr. Mauro explica a osteoporose e o manual" />
+            <AnatomiaVideo src={vsl} poster={vslCapa} title="Dr. Mauro explica a osteoporose e o manual" />
             {osteoporoseOffer.checkoutUrl && <div className="mt-5 text-center"><Button asChild className="h-auto whitespace-normal bg-accent px-8 py-4 text-lg font-bold text-accent-foreground hover:bg-accent/90"><a href={osteoporoseOffer.checkoutUrl}>QUERO MEU MANUAL DE OSTEOPOROSE</a></Button></div>}
             <h2 className="mt-5 max-w-2xl text-lg font-semibold md:text-xl">Osteoporose: informação para cuidar da saúde dos ossos</h2>
             <p className="mt-5 max-w-2xl text-sm font-bold leading-snug text-primary md:text-base">Um manual educativo para compreender a saúde óssea, conhecer cuidados com a alimentação e o movimento e aprender estratégias que podem ajudar a reduzir o risco de quedas e fraturas.</p>
@@ -92,7 +92,7 @@ function Osteoporose() {
         </div>
 
         <OsteoporoseVoice />
-        <AnatomiaVideo src={anatomia.url} poster={anatomiaCapa.url} title="Anatomia e fisiopatologia da osteoporose, com narração masculina" />
+        <AnatomiaVideo src={anatomia} poster={anatomiaCapa} title="Anatomia e fisiopatologia da osteoporose, com narração masculina" />
       </div>
     </section>
 
@@ -137,7 +137,7 @@ function Osteoporose() {
 
     <section className="py-16">
       <div className="mx-auto grid max-w-5xl items-center gap-8 px-6 md:grid-cols-[1fr_1.5fr]">
-        <img src={author.url} alt="Dr. Mauro Augusto Artolphi Pedrin em roupa de cirurgia" loading="lazy" className="mx-auto aspect-square w-full max-w-sm rounded-lg object-cover" />
+        <img src={author} alt="Dr. Mauro Augusto Artolphi Pedrin em roupa de cirurgia" loading="lazy" className="mx-auto aspect-square w-full max-w-sm rounded-lg object-cover" />
         <div><h2 className="text-3xl font-bold text-primary">Conhecimento, experiência e cuidado</h2><p className="mt-5 text-xl font-semibold">Dr. Mauro Augusto Artolphi Pedrin</p><p className="mt-2">CRM-DF 15789, RQE 11028<br />Ortopedia e Traumatologia</p><p className="mt-5 text-lg leading-relaxed">Com 22 anos de experiência, o autor propõe um cuidado integrado com ossos, músculos e capacidade funcional, em linguagem acessível e com responsabilidade médica.</p><p className="mt-4 text-lg leading-relaxed">As orientações educativas devem ser adaptadas à idade, às condições de saúde e ao risco individual de fraturas.</p></div>
       </div>
     </section>

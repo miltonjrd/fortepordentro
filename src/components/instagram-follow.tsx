@@ -1,6 +1,6 @@
 import { Check, Instagram, Mail, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import perfil from "@/assets/ig-perfil.jpg.asset.json";
+import perfil from "@/assets/ig-perfil.jpg";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/drmauroaugustoopedrin?srtk=aDF1eWF5bThwaTll";
 export const INSTAGRAM_HANDLE = "@drmauroaugustoopedrin";
@@ -18,7 +18,7 @@ export function InstagramFollow({ intro, themes, proof }: InstagramFollowProps) 
         <div className="rounded-2xl border-2 border-accent bg-card p-6 shadow-lg md:p-8">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
             <img
-              src={perfil.url}
+              src={perfil}
               alt="Foto de perfil do Dr. Mauro Augusto Artolphi Pedrin no Instagram"
               width={100}
               height={100}

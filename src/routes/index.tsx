@@ -6,11 +6,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import alongamento from "@/assets/alongamento.png.asset.json";
-import avosShopping from "@/assets/avos-shopping.jpg.asset.json";
-import avosMercado from "@/assets/avos-mercado.jpg.asset.json";
-import ebook from "@/assets/capa-ebook.png.asset.json";
-import mauroFoto from "@/assets/mauro-foto.png.asset.json";
+import alongamento from "@/assets/alongamento.png";
+import avosShopping from "@/assets/avos-shopping.jpg";
+import avosMercado from "@/assets/avos-mercado.jpg";
+import ebook from "@/assets/capa-ebook.png";
+import mauroFoto from "@/assets/mauro-foto.png";
 import logo from "@/assets/emblema.png";
 import heroAutonomia from "@/assets/hero-autonomia.jpg";
 import { InstagramFollow } from "@/components/instagram-follow";
@@ -209,10 +209,10 @@ function Index() {
       <Section alt eyebrow="No dia a dia" title="Movimento, alimentação e hábitos para o dia a dia">
         <p>Atividades como levantar da cama, caminhar e passear em família envolvem força e equilíbrio.</p>
         <p>Força é o que deixa você aproveitar esses momentos com confiança.</p>
-        <img src={alongamento.url} alt="Casal se alongando ao ar livre no parque" width={1536} height={1024} loading="lazy" className="rounded-3xl object-cover shadow-2xl" />
+        <img src={alongamento} alt="Casal se alongando ao ar livre no parque" width={1536} height={1024} loading="lazy" className="rounded-3xl object-cover shadow-2xl" />
         <div className="grid gap-4 sm:grid-cols-2">
           <img
-            src={avosShopping.url}
+            src={avosShopping}
             alt="Avós passeando de mãos dadas com os netinhos em um shopping"
             width={1536}
             height={1024}
@@ -220,7 +220,7 @@ function Index() {
             className="rounded-3xl object-cover shadow-2xl"
           />
           <img
-            src={avosMercado.url}
+            src={avosMercado}
             alt="Avós fazendo compras no mercado com os netinhos"
             width={1536}
             height={1024}
@@ -253,7 +253,7 @@ function Index() {
       {/* PRODUTO */}
       <section className="py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
-          <img src={ebook.url} alt="Capa do e-book Eu Ainda Faço Sozinho, do Dr. Mauro Pedrin" width={1200} height={1800} loading="lazy" className="mx-auto w-full max-w-sm rounded-3xl shadow-2xl" />
+          <img src={ebook} alt="Capa do e-book Eu Ainda Faço Sozinho, do Dr. Mauro Pedrin" width={1200} height={1800} loading="lazy" className="mx-auto w-full max-w-sm rounded-3xl shadow-2xl" />
           <div className="space-y-5 text-lg leading-relaxed">
             <p className="text-sm font-bold uppercase tracking-widest text-accent">O produto</p>
             <h2 className="text-3xl font-bold text-primary md:text-4xl">Um guia para continuar forte e independente</h2>
@@ -285,7 +285,7 @@ function Index() {
         <p className="font-semibold text-primary">Você não está diante de um influenciador fitness. Este guia foi escrito por um médico ortopedista.</p>
         <div className="flex items-start gap-5 rounded-2xl border bg-card p-6">
           <img
-            src={mauroFoto.url}
+            src={mauroFoto}
             alt="Foto do Dr. Mauro Augusto Artolphi Pedrin"
             width={120}
             height={160}
