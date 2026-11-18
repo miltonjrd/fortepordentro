@@ -114,15 +114,17 @@ export function VslPlayer({ src, title, className = "" }: VslPlayerProps) {
         </button>
       )}
 
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-1.5 bg-white/25"
-        aria-hidden="true"
-      >
+      {unlocked && (
         <div
-          className="h-full bg-destructive"
-          style={{ width: `${easeProgress(progress) * 100}%` }}
-        />
-      </div>
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-1.5 bg-white/25"
+          aria-hidden="true"
+        >
+          <div
+            className="h-full bg-destructive"
+            style={{ width: `${easeProgress(progress) * 100}%` }}
+          />
+        </div>
+      )}
     </div>
   );
 }
