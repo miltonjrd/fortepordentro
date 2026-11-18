@@ -18,6 +18,8 @@ import {
 import alongamento from "@/assets/alongamento.webp";
 import maurosemfundo from "@/assets/mauro-sem-fundo.webp";
 import fundoEscritorio from "@/assets/fundo-escritorio.webp";
+import { VslPlayer } from "@/components/vsl-player";
+import vslCompleto from "@/assets/videos/VSL-COMPLETO.mp4";
 import ebook from "@/assets/mockup-3d-ebook.webp";
 import logo from "@/assets/emblema.webp";
 import { ebookItems, ebookOffer, ebookSavings, formatBRL } from "@/lib/ebook-offer";
@@ -118,7 +120,7 @@ const modules = [
   {
     icon: Footprints,
     t: "Para começar no seu ritmo",
-    d: "Recomendações gerais para começar em casa, no seu ritmo, sem precisar de academia.",
+    d: "Recomendações gerais para começar em casa, no seu ritmo.",
   },
 ];
 
@@ -145,10 +147,6 @@ const faqs = [
   [
     "O que eu recebo ao comprar?",
     `O e-book Forte por Dentro e três bônus: Guia de Primeiros Passos, Checklist de Segurança em Casa e Manual de Proteínas Simples. Tudo por ${formatBRL(ebookOffer.price)}, em pagamento único e sem cobrança adicional.`,
-  ],
-  [
-    "Preciso de academia ou de aparelhos?",
-    "Não. Os exercícios podem ser feitos em casa, no seu ritmo. Se você já frequenta uma academia, também pode usar o guia por lá.",
   ],
   [
     "Tenho alguma limitação ou dor. Posso usar o guia?",
@@ -180,7 +178,7 @@ function Index() {
   return (
     <main>
       {/* HERO */}
-      <section className="relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden bg-white md:block md:h-[800px] md:min-h-0">
+      <section className="relative flex min-h-svh items-center overflow-hidden bg-white md:block md:h-[800px] md:min-h-0">
         <img
           src={fundoEscritorio}
           alt=""
@@ -194,17 +192,22 @@ function Index() {
           aria-hidden="true"
           className="hero-veil absolute inset-0 bg-[oklch(0.22_0.06_235)]/80 backdrop-blur-[2px] md:bg-[oklch(0.22_0.06_235)]/90 md:backdrop-blur-md"
         />
-        <div className="relative mx-auto w-full max-w-6xl px-5 py-12 sm:px-6 md:h-full md:py-0 md:pt-16">
+        <div className="relative mx-auto w-full max-w-6xl px-5 py-4 sm:px-6 md:h-full md:py-0 md:pt-16">
           <div className="flex h-full flex-col items-center gap-6 text-center md:flex-row md:items-end md:gap-10">
             <div className="text-center md:self-center md:pb-16 md:text-left">
-              <h1 className="max-w-2xl font-display text-3xl font-bold leading-snug text-accent [text-shadow:0_2px_14px_rgb(0_0_0/0.55)] sm:text-4xl md:[text-shadow:none]">
+              <h1 className="max-w-2xl font-display text-2xl font-bold leading-snug text-accent [text-shadow:0_2px_14px_rgb(0_0_0/0.55)] sm:text-4xl md:[text-shadow:none]">
                 Aprenda a recuperar sua força e autonomia, sem ter medo de envelhecer
               </h1>
-              <p className="mt-6 max-w-xl font-semibold leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0/0.7)] sm:text-lg md:text-xl md:[text-shadow:none]">
+              <p className="mt-3 max-w-xl text-sm font-semibold leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0/0.7)] sm:mt-6 sm:text-lg md:text-xl md:[text-shadow:none]">
                 Conheça um guia prático para manter a sua força nas atividades do dia a dia:
-                levantar da cadeira, caminhar, subir escadas ou carregar compras. Sem sair de casa.
+                levantar da cadeira, caminhar, subir escadas ou carregar compras, sem sair de casa.
               </p>
-              <div className="mt-8">
+              <VslPlayer
+                src={vslCompleto}
+                title="Vídeo de apresentação do guia Forte por Dentro"
+                className="mx-auto mt-4 aspect-[9/16] h-[max(12rem,calc(100svh-23rem))] w-auto max-w-full md:hidden"
+              />
+              <div className="mt-4 md:mt-8">
                 <CTA>QUERO CUIDAR DA MINHA FORÇA AGORA</CTA>
               </div>
             </div>
