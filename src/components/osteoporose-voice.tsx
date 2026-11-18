@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import clip from "@/assets/osteoporose-ossos-voz.mp4";
-import poster from "@/assets/avos-shopping.jpg";
+import poster from "@/assets/avos-shopping.webp";
 
 const FALA = "Você sabe o que pode fazer hoje para cuidar melhor dos seus ossos?";
 

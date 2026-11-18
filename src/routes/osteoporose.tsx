@@ -9,16 +9,16 @@ import { InstagramFollow } from '@/components/instagram-follow';
 import { AnatomiaVideo } from '@/components/anatomia-video';
 import anatomia from '@/assets/osteoporose-anatomia.mp4';
 import vsl from '@/assets/vsl-osteoporose.mp4';
-import vslCapa from '@/assets/vsl-osteoporose-capa.jpg';
-import anatomiaCapa from '@/assets/osteoporose-anatomia-capa.jpg';
+import vslCapa from '@/assets/vsl-osteoporose-capa.webp';
+import anatomiaCapa from '@/assets/osteoporose-anatomia-capa.webp';
 
-import family from '@/assets/avos-shopping.jpg';
-import author from '@/assets/mauro-cirurgia.png';
-import logo from '@/assets/emblema.png';
-import exercisePhoto from '@/assets/osteoporose-exercicios.jpg';
-import dairyPhoto from '@/assets/osteoporose-lacteos.jpg';
-import sunlightPhoto from '@/assets/osteoporose-sol.jpg';
-import fallRiskPhoto from '@/assets/osteoporose-quedas.jpg';
+import family from '@/assets/avos-shopping.webp';
+import author from '@/assets/mauro-cirurgia.webp';
+import logo from '@/assets/emblema.webp';
+import exercisePhoto from '@/assets/osteoporose-exercicios.webp';
+import dairyPhoto from '@/assets/osteoporose-lacteos.webp';
+import sunlightPhoto from '@/assets/osteoporose-sol.webp';
+import fallRiskPhoto from '@/assets/osteoporose-quedas.webp';
 
 export const Route = createFileRoute('/osteoporose')({
   head: () => ({ meta: [

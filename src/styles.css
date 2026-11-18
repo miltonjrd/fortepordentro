@@ -4,6 +4,29 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "Recia";
+  src: url("./assets/fonts/Recia-Medium.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Só existe o peso Regular; esta família declara 400 para o navegador sintetizar o negrito (usada no CTA). */
+@font-face {
+  font-family: "Supreme Bold";
+  src: url("./assets/fonts/Supreme-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Supreme";
+  src: url("./assets/fonts/Supreme-Regular.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
  * Design system definition.
  *
@@ -19,8 +42,8 @@
  */
 
 @theme inline {
-  --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-display: "Recia", Georgia, serif;
+  --font-sans: "Supreme", system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -67,7 +90,7 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.97 0.015 220);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.28 0.05 230);
   --card: oklch(0.99 0.008 220);
   --card-foreground: oklch(0.28 0.05 230);
@@ -75,11 +98,11 @@
   --popover-foreground: oklch(0.28 0.05 230);
   --primary: oklch(0.55 0.13 230);
   --primary-foreground: oklch(0.98 0.01 220);
-  --secondary: oklch(0.93 0.05 150);
-  --secondary-foreground: oklch(0.3 0.06 160);
-  --muted: oklch(0.94 0.03 150);
+  --secondary: oklch(0.945 0.003 250);
+  --secondary-foreground: oklch(0.3 0 0);
+  --muted: oklch(0.945 0.003 250);
   --muted-foreground: oklch(0.45 0.04 230);
-  --accent: oklch(0.75 0.14 85);
+  --accent: oklch(0.86 0.17 92);
   --accent-foreground: oklch(0.25 0.04 230);
   --accent-deep: oklch(0.58 0.13 76);
 
@@ -87,7 +110,7 @@
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.88 0.03 220);
   --input: oklch(0.88 0.03 220);
-  --ring: oklch(0.75 0.14 85);
+  --ring: oklch(0.86 0.17 92);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -153,15 +176,86 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; font-size: 18px; }
-  body { font-family: var(--font-sans); }
-  h1, h2, h3 { font-family: var(--font-display); }
+  html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: oklch(0.32 0 0);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Véu escuro do hero: no celular (sem o doutor) é uniforme (texto centralizado sobre toda a imagem); e horizontal a partir de md. */
+@utility hero-veil {
+  @media (min-width: 48rem) {
+    mask-image: linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0, 0, 0, 0.8) 47%,
+      rgba(0, 0, 0, 0.5) 58%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.06) 78%,
+      transparent 88%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0, 0, 0, 0.8) 47%,
+      rgba(0, 0, 0, 0.5) 58%,
+      rgba(0, 0, 0, 0.22) 68%,
+      rgba(0, 0, 0, 0.06) 78%,
+      transparent 88%
+    );
+  }
+}
+
+/* Preço riscado na diagonal: o traço cruza o valor sem esconder os algarismos. */
+@utility preco-riscado {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    top: 50%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--destructive);
+    opacity: 0.75;
+    transform: translateY(-50%) rotate(-12deg);
+  }
 }
 
 @utility btn-cta {
-  display: inline-flex; align-items: center; justify-content: center; text-align: center;
-  background: var(--accent); color: var(--accent-foreground);
-  padding: 1.1rem 2rem; border-radius: 999px; font-weight: 700; letter-spacing: .02em;
-  box-shadow: var(--shadow-cta); transition: transform .2s, filter .2s;
-  &:hover { transform: translateY(-2px); filter: brightness(1.05); }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  padding: 1rem 1.25rem;
+  border-radius: 999px;
+  font-family: "Supreme Bold", var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-cta);
+  transition:
+    transform 0.2s,
+    filter 0.2s;
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+  }
+  @media (min-width: 40rem) {
+    padding: 1.1rem 2rem;
+  }
 }

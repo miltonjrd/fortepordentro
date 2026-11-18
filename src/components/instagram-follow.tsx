@@ -1,6 +1,6 @@
 import { Check, Instagram, Mail, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import perfil from "@/assets/ig-perfil.jpg";
+import perfil from "@/assets/ig-perfil.webp";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/drmauroaugustoopedrin?srtk=aDF1eWF5bThwaTll";
 export const INSTAGRAM_HANDLE = "@drmauroaugustoopedrin";
