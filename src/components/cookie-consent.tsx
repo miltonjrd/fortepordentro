@@ -85,7 +85,7 @@ export function CookieConsent() {
   };
 
   const [open, setOpen] = useState(false);
-  const show = choice === null || open;
+  const show = open;
 
   const prefsLink = (
     <div className="bg-background py-3 text-center">
