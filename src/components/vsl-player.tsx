@@ -85,7 +85,7 @@ export function VslPlayer({ src, title, className = "" }: VslPlayerProps) {
           className="group absolute inset-0 flex items-center justify-center p-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent"
         >
           <span className="flex w-full max-w-[10.5rem] flex-col items-center gap-2 rounded-md border border-white/80 bg-primary/85 backdrop-blur-[2px] font-['Supreme_Bold',sans-serif] px-3 py-4 text-center text-white shadow-2xl transition-transform group-hover:scale-105">
-            <span className="text-sm font-bold leading-tight">Sua apresentação já começou...</span>
+            <span className="text-sm font-bold leading-tight">Sua aula já começou...</span>
             <VolumeX className="h-12 w-12" strokeWidth={2.25} aria-hidden="true" />
             <span className="text-sm font-extrabold uppercase leading-tight">
               Clique para ouvir!
