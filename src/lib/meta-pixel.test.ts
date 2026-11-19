@@ -2,16 +2,19 @@ import { describe, expect, it } from "vitest";
 import { isPixelAllowed } from "./meta-pixel";
 
 describe("Meta Pixel por rota", () => {
-  it("roda na página de vendas e na política de privacidade", () => {
+  it("roda somente na página principal de vendas", () => {
     expect(isPixelAllowed("/")).toBe(true);
-    expect(isPixelAllowed("/privacidade")).toBe(true);
+    expect(isPixelAllowed("")).toBe(true);
+    expect(isPixelAllowed("/", "fortepordentro.com.br")).toBe(true);
   });
-  it("não roda no upsell de osteoporose", () => {
+  it("não roda em nenhuma outra rota", () => {
+    expect(isPixelAllowed("/privacidade")).toBe(false);
     expect(isPixelAllowed("/osteoporose")).toBe(false);
     expect(isPixelAllowed("/osteoporose/")).toBe(false);
-    expect(isPixelAllowed("/osteoporose/qualquer")).toBe(false);
+    expect(isPixelAllowed("/qualquer-outra")).toBe(false);
   });
-  it("não confunde rotas com prefixo parecido", () => {
-    expect(isPixelAllowed("/osteoporosex")).toBe(true);
+  it("nunca roda no subdomínio do upsell, nem na raiz dele", () => {
+    expect(isPixelAllowed("/", "osteoporose.fortepordentro.com.br")).toBe(false);
+    expect(isPixelAllowed("/osteoporose", "osteoporose.fortepordentro.com.br")).toBe(false);
   });
 });

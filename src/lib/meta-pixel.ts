@@ -1,8 +1,11 @@
-// Rotas onde o Meta Pixel nunca é carregado nem dispara eventos.
-// O upsell de osteoporose fica fora para não classificar o Pixel em categorias de saúde.
-export const PIXEL_EXCLUDED_PATHS = ["/osteoporose"];
+import { isUpsellHost } from "./host-routing";
 
-export function isPixelAllowed(pathname: string) {
+// O Meta Pixel só existe na página principal de vendas. Qualquer outra rota
+// (upsell de osteoporose, privacidade, rotas futuras) nunca carrega nem dispara eventos.
+export const PIXEL_ALLOWED_PATHS = ["/"];
+
+export function isPixelAllowed(pathname: string, hostname = "") {
+  if (isUpsellHost(hostname)) return false;
   const path = pathname.replace(/\/+$/, "") || "/";
-  return !PIXEL_EXCLUDED_PATHS.some((p) => path === p || path.startsWith(`${p}/`));
+  return PIXEL_ALLOWED_PATHS.includes(path);
 }

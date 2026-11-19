@@ -66,13 +66,13 @@ export function CookieConsent() {
       }
       return;
     }
-    if (isPixelAllowed(window.location.pathname)) startPixel();
+    if (isPixelAllowed(window.location.pathname, window.location.hostname)) startPixel();
     let last = window.location.pathname + window.location.search;
     return router.subscribe("onResolved", () => {
       const cur = window.location.pathname + window.location.search;
       if (cur === last) return;
       last = cur;
-      if (!isPixelAllowed(window.location.pathname)) return;
+      if (!isPixelAllowed(window.location.pathname, window.location.hostname)) return;
       if ((window as any).__metaPixelInit) (window as any).fbq?.("track", "PageView");
       else startPixel();
     });

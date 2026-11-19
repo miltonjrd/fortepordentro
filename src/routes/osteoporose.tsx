@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
+import { createFileRoute } from '@tanstack/react-router';
+import { isUpsellHost, mainOrigin } from '@/lib/host-routing';
 import { Apple, ArrowDown, ArrowLeft, Bone, Check, ClipboardCheck, Dumbbell, Footprints, BookOpen, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -53,12 +55,23 @@ function OfferLink({ children }: { children: React.ReactNode }) {
   return <Button asChild className="h-auto min-h-12 whitespace-normal bg-accent px-7 py-4 text-base font-bold text-accent-foreground hover:bg-accent/90"><a href="#oferta-ossos">{children}<ArrowDown /></a></Button>;
 }
 
+// No subdomínio, o link para a página principal precisa ser absoluto (outro host).
+function useMainHref() {
+  const [href, setHref] = useState('/');
+  useEffect(() => {
+    const { hostname, protocol } = window.location;
+    if (isUpsellHost(hostname)) setHref(`${mainOrigin(hostname, protocol)}/`);
+  }, []);
+  return href;
+}
+
 function Osteoporose() {
+  const mainHref = useMainHref();
   return <main>
     <header className="border-b bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <img src={logo} alt="Eu Ainda Faço Sozinho" className="h-16 w-auto" />
-        <Button asChild variant="ghost"><Link to="/"><ArrowLeft />EU AINDA FAÇO SOZINHO</Link></Button>
+        <Button asChild variant="ghost"><a href={mainHref}><ArrowLeft />EU AINDA FAÇO SOZINHO</a></Button>
       </div>
     </header>
 
@@ -168,7 +181,7 @@ function Osteoporose() {
         <p className="font-display text-6xl font-bold text-primary">{formatBRL(osteoporoseOffer.price)}</p>
         <p className="mt-2 text-muted-foreground">Pagamento único</p>
         <div className="mt-7">{osteoporoseOffer.checkoutUrl ? <Button asChild className="h-auto whitespace-normal bg-accent px-8 py-4 text-lg font-bold text-accent-foreground hover:bg-accent/90"><a href={osteoporoseOffer.checkoutUrl}>QUERO MEU MANUAL DE OSTEOPOROSE</a></Button> : <><Button disabled className="h-auto w-full max-w-lg whitespace-normal bg-accent px-8 py-4 text-lg font-bold text-accent-foreground">COMPRA DISPONÍVEL EM BREVE</Button><p className="mt-3 text-sm text-muted-foreground">As vendas deste manual ainda não estão abertas.</p></>}</div>
-        <Button asChild variant="link" className="mt-5 h-auto whitespace-normal"><Link to="/">Voltar ao e-book Eu Ainda Faço Sozinho</Link></Button>
+        <Button asChild variant="link" className="mt-5 h-auto whitespace-normal"><a href={mainHref}>Voltar ao e-book Eu Ainda Faço Sozinho</a></Button>
       </div>
     </section>
 
