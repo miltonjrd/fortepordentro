@@ -24,7 +24,7 @@ import { VslPlayer } from "@/components/vsl-player";
 import vsl from "@/assets/videos/VSL-OSTEOPOROSE.mp4";
 
 import family from "@/assets/avos-shopping.webp";
-import avosMercado from "@/assets/avos-mercado.jpg";
+import avosMercado from "@/assets/avos-mercado.webp";
 import author from "@/assets/mauro-cirurgia.webp";
 import logo from "@/assets/emblema.webp";
 import exercisePhoto from "@/assets/osteoporose-exercicios.webp";
