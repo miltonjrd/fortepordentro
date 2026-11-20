@@ -274,7 +274,7 @@ function Osteoporose() {
       <section aria-labelledby="cuidados-ilustrados" id="cuidados" className="py-12 md:py-20">
         <div className="mx-auto max-w-6xl px-6 md:px-0">
           <h2 id="cuidados-ilustrados" className="text-3xl font-bold text-primary md:text-4xl">
-            Cuidados que devem fazer parte da sua rotina
+            Cuidados que o manual te ajudará a organizar
           </h2>
           <div className="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {illustratedCare.map(({ image, alt, title, text }) => (
