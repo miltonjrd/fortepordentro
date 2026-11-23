@@ -59,11 +59,11 @@ export function CookieConsent() {
   }, []);
 
   useEffect(() => {
-    if (choice !== "granted") {
-      if (choice === "denied") {
-        (window as any).fbq?.("consent", "revoke");
-        clearMetaCookies();
-      }
+    // O Pixel roda por padrão, mesmo sem escolha; só para se o visitante recusar.
+    if (choice === undefined) return;
+    if (choice === "denied") {
+      (window as any).fbq?.("consent", "revoke");
+      clearMetaCookies();
       return;
     }
     if (isPixelAllowed(window.location.pathname, window.location.hostname)) startPixel();
@@ -118,7 +118,7 @@ export function CookieConsent() {
       <div className="mx-auto flex max-w-4xl flex-col gap-3 md:flex-row md:items-center">
         <p className="text-sm text-foreground md:flex-1">
           Usamos cookies de marketing (Meta Pixel) para medir visitas e melhorar nossos anúncios.
-          Eles só são ativados se você aceitar, conforme a LGPD. Recusar não afeta o uso do site.
+          Você pode recusar a qualquer momento e isso não afeta o uso do site.
         </p>
         <div className="flex gap-2">
           <button

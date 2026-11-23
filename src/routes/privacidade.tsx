@@ -27,10 +27,10 @@ function Privacidade() {
       <p className="mt-2">O site não pede cadastro e não guarda as respostas dos testes rápidos: elas ficam apenas no seu navegador e somem ao fechar a página. Os dados de compra (nome, e-mail, pagamento) são coletados e tratados pela Hotmart, conforme a política de privacidade dela.</p>
 
       <h2 className="mt-8 text-xl font-bold text-primary">Cookies e Meta Pixel</h2>
-      <p className="mt-2">Usamos o Meta Pixel, da Meta Platforms, para medir visitas e melhorar nossos anúncios. Ele só é ativado se você clicar em "Aceitar" no aviso de cookies. Se recusar, o Pixel não é carregado e os cookies de marketing (_fbp e _fbc) são apagados. Você pode mudar sua escolha a qualquer momento pelo link "Preferências de cookies" no rodapé. Não enviamos à Meta informações sobre sua saúde.</p>
+      <p className="mt-2">Usamos o Meta Pixel, da Meta Platforms, para medir visitas e melhorar nossos anúncios. Ele funciona por padrão na página principal. Se você clicar em "Recusar" no aviso de cookies, o Pixel deixa de enviar dados e os cookies de marketing (_fbp e _fbc) são apagados. Você pode mudar sua escolha a qualquer momento pelo link "Preferências de cookies" no rodapé. Não enviamos à Meta informações sobre sua saúde.</p>
 
       <h2 className="mt-8 text-xl font-bold text-primary">Base legal e seus direitos</h2>
-      <p className="mt-2">O uso de cookies de marketing se baseia no seu consentimento (LGPD, Lei 13.709/2018). Você pode pedir acesso, correção ou exclusão de dados, ou retirar o consentimento, escrevendo para o e-mail acima.</p>
+      <p className="mt-2">O uso de cookies de marketing se baseia no nosso legítimo interesse (LGPD, Lei 13.709/2018), e você pode se opor recusando os cookies. Você pode pedir acesso, correção ou exclusão de dados escrevendo para o e-mail acima.</p>
 
       <h2 className="mt-8 text-xl font-bold text-primary">Aviso de saúde</h2>
       <p className="mt-2">Os materiais vendidos são educativos e não substituem consulta médica, diagnóstico ou tratamento.</p>
