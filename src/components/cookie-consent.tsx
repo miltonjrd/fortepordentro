@@ -33,6 +33,21 @@ function startPixel() {
   w.fbq("track", "PageView");
 }
 
+const GTM_ID = "GTM-TCNGGFWQ";
+
+// Google Tag Manager (GA4). Carrega em todas as rotas, sempre, independente do consentimento de cookies.
+function startGtm() {
+  const w = window as any;
+  if (w.__gtmInit) return;
+  w.__gtmInit = true;
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
+  document.head.appendChild(s);
+}
+
 function clearMetaCookies() {
   const names = ["_fbp", "_fbc"];
   const parts = window.location.hostname.split(".");
@@ -56,6 +71,10 @@ export function CookieConsent() {
 
   useEffect(() => {
     setChoice(localStorage.getItem(KEY));
+  }, []);
+
+  useEffect(() => {
+    startGtm();
   }, []);
 
   useEffect(() => {
