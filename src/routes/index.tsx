@@ -46,24 +46,24 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function CTA({ children, href = "#oferta" }: { children: React.ReactNode; href?: string }) {
+function CTA({ id, children, href = "#oferta" }: { id: string; children: React.ReactNode; href?: string }) {
   return (
-    <a href={href} className={`btn-cta w-full text-base sm:w-auto md:text-lg`}>
+    <a id={id} href={href} className={`btn-cta w-full text-base sm:w-auto md:text-lg`}>
       {children}
     </a>
   );
 }
 
-function BuyButton({ className, children }: { className: string; children: React.ReactNode }) {
+function BuyButton({ id, className, children }: { id: string; className: string; children: React.ReactNode }) {
   if (!ebookOffer.checkoutUrl) {
     return (
-      <button type="button" disabled className={`${className} cursor-not-allowed opacity-70`}>
+      <button id={id} type="button" disabled className={`${className} cursor-not-allowed opacity-70`}>
         COMPRA DISPONÍVEL EM BREVE
       </button>
     );
   }
   return (
-    <a href={ebookOffer.checkoutUrl} className={`${className}`}>
+    <a id={id} href={ebookOffer.checkoutUrl} className={`${className}`}>
       {children}
     </a>
   );
@@ -208,7 +208,7 @@ function Index() {
                 className="mx-auto mt-4 aspect-[9/16] h-[max(12rem,calc(100svh-23rem))] w-auto max-w-full md:hidden"
               />
               <div className="mt-4 md:mt-8">
-                <CTA>QUERO CUIDAR DA MINHA FORÇA AGORA</CTA>
+                <CTA id="cta-hero">QUERO CUIDAR DA MINHA FORÇA AGORA</CTA>
               </div>
             </div>
 
@@ -276,7 +276,7 @@ function Index() {
               Leia no seu ritmo e volte aos tópicos quando precisar. Formato digital para celular,
               tablet ou computador.
             </p>
-            <CTA>QUERO CONHECER O GUIA</CTA>
+            <CTA id="cta-guia">QUERO CONHECER O GUIA</CTA>
           </div>
         </div>
       </section>
@@ -407,7 +407,7 @@ function Index() {
               Você economiza {formatBRL(ebookSavings)}
             </p>
             <p className="mb-8 text-base text-muted-foreground">Pagamento único.</p>
-            <BuyButton className="btn-cta w-full md:w-auto text-base sm:text-lg">
+            <BuyButton id="cta-oferta" className="btn-cta w-full md:w-auto text-base sm:text-lg">
               QUERO GARANTIR MEU ACESSO POR {formatBRL(ebookOffer.price).replace(/\u00a0/g, " ")}
             </BuyButton>
             <p className="mt-3 text-sm text-muted-foreground">
@@ -448,7 +448,7 @@ function Index() {
             Cuide da sua força. Valorize sua autonomia. Invista em conhecimento.
           </p>
           <div className="pt-4">
-            <CTA href={ebookOffer.checkoutUrl ?? "#oferta"}>
+            <CTA id="cta-final" href={ebookOffer.checkoutUrl ?? "#oferta"}>
               QUERO MEU E-BOOK FORTE POR DENTRO AGORA
             </CTA>
           </div>
