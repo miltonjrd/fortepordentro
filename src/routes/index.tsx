@@ -27,17 +27,17 @@ import { ebookItems, ebookOffer, ebookSavings, formatBRL } from "@/lib/ebook-off
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FORTE POR DENTRO | EU AINDA FAÇO SOZINHO | Guia prático de força no dia a dia" },
+      { title: "FORTE POR DENTRO - Guia prático de força no dia a dia" },
       {
         name: "description",
         content:
-          "Guia prático para manter a força no dia a dia: levantar da cadeira, subir escadas, carregar as compras e caminhar com confiança.",
+          "O primeiro “deixa que eu faço” parece carinho. Guia prático para cuidar da força e seguir fazendo as suas coisas sozinho.",
       },
       { property: "og:title", content: "FORTE POR DENTRO | EU AINDA FAÇO SOZINHO" },
       {
         property: "og:description",
         content:
-          "Continue fazendo as suas coisas sozinho, com força e confiança. E-book + 3 bônus por R$ 67,00.",
+          "Não entregue as suas tarefas antes da hora. E-book + 3 bônus por R$ 67,00.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -93,6 +93,25 @@ function Section({
     </section>
   );
 }
+
+const scenes = [
+  {
+    t: "A sacola do mercado",
+    d: "Alguém tira da sua mão antes de você tentar. “Deixa que eu levo.”",
+  },
+  {
+    t: "O pote na cozinha",
+    d: "A tampa não gira. Você disfarça, espera alguém chegar e pede.",
+  },
+  {
+    t: "A escada",
+    d: "Antes de subir, você pensa duas vezes. Às vezes, deixa para depois.",
+  },
+  {
+    t: "O passeio em família",
+    d: "“Hoje vai ter que andar muito. Não é melhor você ficar?”",
+  },
+];
 
 const imagine = [
   "Subir escadas com segurança",
@@ -196,11 +215,11 @@ function Index() {
           <div className="flex h-full flex-col items-center gap-6 text-center md:flex-row md:items-end md:gap-10">
             <div className="text-center md:self-center md:pb-16 md:text-left">
               <h1 className="max-w-2xl font-display text-2xl font-bold leading-snug text-accent [text-shadow:0_2px_14px_rgb(0_0_0/0.55)] sm:text-4xl md:[text-shadow:none]">
-                Aprenda a recuperar sua força e autonomia, sem ter medo de envelhecer
+                Aprenda a cuidar da sua força e não depender de mais ninguém
               </h1>
               <p className="mt-3 max-w-xl text-sm font-semibold leading-relaxed text-white [text-shadow:0_1px_10px_rgb(0_0_0/0.7)] sm:mt-6 sm:text-lg md:text-xl md:[text-shadow:none]">
-                Conheça um guia prático para manter a sua força nas atividades do dia a dia:
-                levantar da cadeira, caminhar, subir escadas ou carregar compras, sem sair de casa.
+                Carregar sacolas, subir escadas ou abrir potes se tornou uma tarefa difícil? Conheça um guia prático para cuidar da sua
+                força em casa e lutar pelo que você ainda quer fazer sem pedir ajuda.
               </p>
               <VslPlayer
                 src={vslCompleto}
@@ -208,7 +227,7 @@ function Index() {
                 className="mx-auto mt-4 aspect-[9/16] h-[max(12rem,calc(100svh-23rem))] w-auto max-w-full md:hidden"
               />
               <div className="mt-4 md:mt-8">
-                <CTA id="cta-hero">QUERO CUIDAR DA MINHA FORÇA AGORA</CTA>
+                <CTA id="cta-hero">QUERO CONTINUAR FAZENDO SOZINHO</CTA>
               </div>
             </div>
 
@@ -223,11 +242,24 @@ function Index() {
         </div>
       </section>
 
+      {/* DOR: a perda de autonomia em cenas do dia a dia */}
+      <Section title="Ninguém perde a independência por querer, ela vai sendo entregue aos poucos." alt>
+        <div className="grid gap-5 md:grid-cols-4">
+          {scenes.map(({ t, d }) => (
+            <div key={t} className="rounded-2xl bg-card p-6">
+              <h3 className="mb-2 text-xl font-bold text-primary">{t}</h3>
+              <p>{d}</p>
+            </div>
+          ))}
+        </div>
+        <CTA id="cta-cenas">NÃO QUERO DEPENDER DOS OUTROS</CTA>
+      </Section>
+
       <Section title="">
         <div className="grid gap-8 md:grid-cols-2 md:gap-12">
           <div>
             <h2 className="mb-8 text-3xl font-bold leading-tight text-primary md:text-4xl">
-              Imagine fazer tudo isso com firmeza e tranquilidade:
+              Agora imagine responder conseguir facilmente:
             </h2>
 
             <ul className="space-y-4">
@@ -238,9 +270,11 @@ function Index() {
                 </li>
               ))}
             </ul>
-            <p className="font-semibold mt-8">
-              Se esses são os seus objetivos, este material foi feito para você.
+            <p className="font-semibold mt-8 mb-6">
+              Se é isso que você deseja, este material foi feito para você.
             </p>
+            <CTA id="cta-cenas">NÃO QUERO DEPENDER DOS OUTROS</CTA>
+
           </div>
           <img
             src={alongamento}
@@ -266,7 +300,7 @@ function Index() {
           />
           <div className="space-y-5 text-lg leading-relaxed">
             <h2 className="text-3xl font-bold text-primary md:text-4xl">
-              Um guia prático para manter a sua força
+              Esperar também é uma escolha. Comece pelo que dá para fazer em casa.
             </h2>
             <p>
               O guia <strong>"Forte por Dentro"</strong> é um e-book educativo que traz o cuidado
@@ -378,7 +412,7 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="bg-card p-0 text-center md:p-12">
             <h2 className="mb-6 text-2xl font-bold text-primary sm:text-3xl">
-              Comece hoje a cuidar da sua força
+              Cuide hoje da força para o que você não quer pedir amanhã
             </h2>
             <ul className="mx-auto mb-8 max-w-xl divide-y text-left text-base sm:text-lg">
               {ebookItems.map((item) => (
@@ -441,11 +475,11 @@ function Index() {
       <section className="bg-primary py-12 md:py-20 text-center text-primary-foreground">
         <div className="mx-auto max-w-6xl space-y-5 px-6 text-lg leading-relaxed">
           <h2 className="text-3xl font-bold md:text-4xl">
-            Dê o próximo passo para uma vida mais forte
+            Da próxima vez que disserem “deixa que eu faço”
           </h2>
-          <p className="opacity-90">Informação prática para cuidar da sua força, no seu ritmo.</p>
+          <p className="opacity-90">Você pode aceitar o carinho sem abrir mão de cuidar da sua força.</p>
           <p className="font-display text-2xl">
-            Cuide da sua força. Valorize sua autonomia. Invista em conhecimento.
+            O que você ainda quer fazer sozinho merece atenção agora.
           </p>
           <div className="pt-4">
             <CTA id="cta-final" href={ebookOffer.checkoutUrl ?? "#oferta"}>
